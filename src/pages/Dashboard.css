@@ -1,0 +1,101 @@
+/* Dashboard.css */
+.dashboard {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.dashboard-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.dashboard-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.dashboard-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.dashboard-content button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  color: #2575fc;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.dashboard-content button:hover {
+  background: #2575fc;
+  color: #fff;
+}
+
+/* Bubble animation */
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 10s linear infinite;
+}
+
+.bubble:nth-child(odd) {
+  width: 15px;
+  height: 15px;
+  animation-duration: 12s;
+}
+
+.bubble:nth-child(even) {
+  width: 25px;
+  height: 25px;
+  animation-duration: 8s;
+}
+
+.bubble:nth-child(n) {
+  left: calc(5% * n);
+  animation-delay: calc(0.5s * n);
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(0.5);
+    opacity: 0;
+  }
+}
